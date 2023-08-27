@@ -30,18 +30,13 @@ function Footer(props) {
           <nav className="footer-nav">
             <ul>
               <li>
-                <a href="https://www.creative-tim.com" target="_blank">
-                  Creative Tim
+                <a href="https://www.google.com" target="_blank">
+                  Google
                 </a>
               </li>
               <li>
-                <a href="https://blog.creative-tim.com" target="_blank">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license" target="_blank">
-                  Licenses
+                <a href="https://gidbf.com/" target="_blank">
+                  Gidf
                 </a>
               </li>
             </ul>

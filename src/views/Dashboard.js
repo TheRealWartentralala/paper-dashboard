@@ -36,7 +36,41 @@ import {
   dashboardNASDAQChart,
 } from "variables/charts.js";
 
+import { useState, useEffect } from "react";
+
 function Dashboard() {
+  /*const url = "https://jsonplaceholder.typicode.com/users";
+  const [data, setData] = useState([]);
+
+  const fetchInfo = () => {
+    return fetch(url)
+      .then((res) => res.json())
+      .then((d) => setData(d))
+  }
+  useEffect(() => {
+    fetchInfo();
+  }, []);
+/* nach className content einfügren wenn gewünscht
+      <div className="App">
+      <center>
+        {data.map((dataObj, index) => {
+          return (
+            <div
+              style={{
+                width: "15em",
+                backgroundColor: "#35D841",
+                padding: 2,
+                borderRadius: 10,
+                marginBlock: 10,
+              }}
+            >
+              <p style={{ fontSize: 20, color: 'white' }}>{dataObj.name}</p>
+            </div>
+          );
+        })}
+      </center>
+    </div>
+    */
   return (
     <>
       <div className="content">
@@ -140,7 +174,7 @@ function Dashboard() {
               <CardFooter>
                 <hr />
                 <div className="stats">
-                  <i className="fas fa-sync-alt" /> Update now
+                  <i className="fas fa-sync-alt" /> {GetData()}
                 </div>
               </CardFooter>
             </Card>
@@ -227,6 +261,24 @@ function Dashboard() {
       </div>
     </>
   );
+
 }
+
+function GetData(){
+  const [data1, setData] = useState({})
+
+  useEffect(() => {
+    fetch("/home")
+    .then(res =>res.json())
+    .then(data =>setData(data))
+  }, [])
+
+console.log(data1.name)
+
+  return(
+    data1.name
+  )
+}
+
 
 export default Dashboard;
